@@ -53,13 +53,12 @@ class Noveride(object):
 
 
 class Overide(object):
-    prop = Properti()
+    def __setattr__(self, key, value):
+        object.__setattr__(self, key, value)
 
     def __init__(self):
         self.props = {}
-
-    def __setattr__(self, key, value):
-        object.__setattr__(self, key, value)
+    prop = Properti()
 
 
 over1 = Overide()
